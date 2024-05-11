@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body>
-    <?php include '../templates/navbar.php'; ?>
-
-
+<?php include '../templates/head.php'; ?>
     <section class="bg-[#1A2035] h-screen p-5 sm:ml-72">
         <div class="bg-gray-100 h-full rounded-xl overflow-auto">
             <div class="h-full">
@@ -190,6 +177,4 @@
             </div>
         </div>
     </section>
-</body>
-
-</html>
+<?php include '../templates/tail.php'; ?>
