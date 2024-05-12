@@ -10,8 +10,6 @@
 
     <body>
         <?php include '../templates/navbar.php'; ?>
-
-
         <section class="bg-[#1A2035] h-screen p-5 sm:ml-72">
             <div class="bg-gray-100 h-full rounded-xl overflow-auto">
                 <!-- main content -->
