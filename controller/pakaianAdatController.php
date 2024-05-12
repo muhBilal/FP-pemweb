@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/../config/connection.php';
-global $conn;
 function getPakaianAdat() {
     global $conn;
     $query = "SELECT * FROM pakaian_adat";
@@ -25,21 +24,46 @@ function getPakaianAdatById($id) {
 
 function insertPakaianAdat($data) {
     global $conn;
-    $query = "INSERT INTO pakaian_adat (nama, deskripsi, gambar) VALUES ('$data[nama]', '$data[deskripsi]', '$data[gambar]')";
+    $name = mysqli_real_escape_string($conn, $data['name']);
+    $description = mysqli_real_escape_string($conn, $data['description']);
+    $maps = mysqli_real_escape_string($conn, $data['maps']);
+    $youtube = mysqli_real_escape_string($conn, $data['youtube']);
+    $image = mysqli_real_escape_string($conn, $data['image']);
+
+    $query = "INSERT INTO pakaian_adat (name, description, maps, youtube_url, image_url) 
+              VALUES ('$name', '$description', '$maps', '$youtube', '$image')";
     $result = mysqli_query($conn, $query);
+
     if (!$result) {
-        die("Query error: ". mysqli_error($conn));
+        die("Query error: " . mysqli_error($conn));
     }
+
     return $result;
 }
 
 function updatePakaianAdat($data) {
     global $conn;
-    $query = "UPDATE pakaian_adat SET nama = '$data[nama]', deskripsi = '$data[deskripsi]', gambar = '$data[gambar]' WHERE id = $data[id]";
+    $name = mysqli_real_escape_string($conn, $data['name']);
+    $description = mysqli_real_escape_string($conn, $data['description']);
+    $maps = mysqli_real_escape_string($conn, $data['maps']);
+    $youtube = mysqli_real_escape_string($conn, $data['youtube']);
+    $image = mysqli_real_escape_string($conn, $data['image']);
+    $id = $data['id'];
+
+    $query = "UPDATE pakaian_adat SET
+                        name = '$name', 
+                        description = '$description', 
+                        maps = '$maps',
+                        youtube_url = '$youtube',
+                        image_url = '$image'
+                    WHERE id = $id";
+
     $result = mysqli_query($conn, $query);
+
     if (!$result) {
-        die("Query error: ". mysqli_error($conn));
+        die("Query error: " . mysqli_error($conn));
     }
+
     return $result;
 }
 

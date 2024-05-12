@@ -21,7 +21,7 @@
                                             gunung yang menantang hingga pantai berpasir putih yang
                                             menenangkan
                                         </p>
-                                        <a href="pakaian-adat/list.php"
+                                        <a href="pakaian-adat/index.php"
                                            class="group mx-auto hidden px-5 py-2 bg-[#1A2035] hover:bg-gradient-to-br rounded-md text-white outline-none shadow-lg transform active:scale-x-75 transition-transform text-sm group-hover:block duration-1000 ease-in-out opacity-0 group-hover:opacity-100">
                                             Selengkapnya
                                         </a>
