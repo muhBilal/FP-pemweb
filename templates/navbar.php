@@ -10,6 +10,7 @@ if (!file_exists($envFile)) {
         return explode('=', $item);
     }, $env);
     $env = array_column($env, 1, 0);
+    
     $appUrl = $env['APP_URL'];
     $imagePath = $appUrl . '/public/images/man.webp';
 }
