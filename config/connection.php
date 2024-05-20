@@ -9,10 +9,15 @@ $env = array_map(function ($item) {
 }, $env);
 $env = array_column($env, 1, 0);
 
-$servername = $env['DB_HOST'];
-$username = $env['DB_USER'];
-$password = $env['DB_PASS'];
-$databasename = $env['DB_NAME'];
+//$servername = $env['DB_HOST'];
+//$username = $env['DB_USER'];
+//$password = $env['DB_PASS'];
+//$databasename = $env['DB_NAME'];
+
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$databasename = 'pemweb';
 
 $conn = new mysqli($servername, $username, $password, $databasename);
 
