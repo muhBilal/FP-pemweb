@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="apple-touch-icon" sizes="76x76" href="http://localhost/pemweb/public/admin/img/apple-icon.png"/>
     <link rel="icon" type="image/png" href="http://localhost/pemweb/public/admin/img/favicon.png"/>
-    <title>Argon Dashboard 2 Tailwind by Creative Tim</title>
+    <title>Exantara</title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
     <!-- Font Awesome Icons -->
@@ -16,9 +16,8 @@
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
-    <!--    <link href="//../public/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />-->
-<!--    <link href="http://localhost/pemweb/public/admin/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet"/>-->
-    <link href="http://localhost/pemweb/public/admin/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet"/>
+    <link href="http://localhost/pemweb/public/admin/css/dashboard.css?v=1.0.1" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
 </head>
 
 <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">

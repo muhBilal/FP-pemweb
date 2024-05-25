@@ -34,23 +34,23 @@ if (!file_exists($envFile)) {
                 </div>
                 <ul class="space-y-2 font-medium text-lg">
                     <li>
-                        <a href="/pemweb/pages/pakaian-adat/list.php" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
-                            <span class="ml-3">Tari Daerah</span>
+                        <a href="/pemweb/pages/index.php" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
+                            <span class="ml-3">Beranda</span>
                         </a>
                     </li>
                     <li>
                         <a href="/about-us" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
-                            <span class="ml-3">Makanan Daerah</span>
+                            <span class="ml-3">Tentang Kami</span>
                         </a>
                     </li>
+<!--                    <li>-->
+<!--                        <a href="/about-us" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">-->
+<!--                            <span class="ml-3">Tari Daerah</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
                     <li>
                         <a href="/about-us" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
-                            <span class="ml-3">Tari Daerah</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/about-us" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
-                            <span class="ml-3">Makanan Adat</span>
+                            <span class="ml-3">Pengaturan Akun</span>
                         </a>
                     </li>
                 </ul>
