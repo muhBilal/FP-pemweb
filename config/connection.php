@@ -1,27 +1,21 @@
 <?php
-$envFile = __DIR__ . '/../.env';
+require __DIR__ . '/../vendor/autoload.php';
 
-$env = file_get_contents($envFile);
-$env = explode("\n", $env);
-$env = array_filter($env);
-$env = array_map(function ($item) {
-    return explode('=', $item);
-}, $env);
-$env = array_column($env, 1, 0);
+use Dotenv\Dotenv;
+use Dotenv\Exception\InvalidPathException;
 
-$servername = $env['DB_HOST'];
-$username = $env['DB_USER'];
-$password = $env['DB_PASS'];
-$databasename = $env['DB_NAME'];
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 
-// $servername = 'localhost';
-// $username = 'root';
-// $password = '';
-// $databasename = 'pemweb';
+$servername = $_ENV['DB_SERVERNAME'];
+$username = $_ENV['DB_USERNAME'];
+$password = $_ENV['DB_PASSWORD'];
+$databasename = $_ENV['DB_DATABASE'];
 
 $conn = new mysqli($servername, $username, $password, $databasename);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+//echo "Connected successfully";
 ?>
