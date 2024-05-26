@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../controller/AuthController.php';
 $envFile = __DIR__ . '/../.env';
 if (!file_exists($envFile)) {
     die('.env file not found');
@@ -14,6 +15,17 @@ if (!file_exists($envFile)) {
     $appUrl = $env['APP_URL'];
     $imagePath = $appUrl . '/public/images/man.webp';
 }
+$username = '';
+$email = '';
+if(isset($_SESSION['username']) && isset($_SESSION['email'])){
+    $username = $_SESSION['username'];
+    $email = $_SESSION['email'];
+}
+
+if(isset($_POST['logout'])){
+    $authController = new AuthController();
+    $authController->logout();
+}
 ?>
 
 <section class="font-poppins">
@@ -28,9 +40,9 @@ if (!file_exists($envFile)) {
             <div class="h-full flex flex-col justify-between p-12 overflow-y-auto bg-[#1A2035] text-white">
                 <div class="pl-4 ">
                     <img src="<?php echo $imagePath ?>" class="w-[80px] h-[80px] object-cover rounded-xl" alt="" />
-                    <h1 class="font-boldf text-2xl mt-5">name</h1>
-                    <h4 class="sm:text-md text-gray-400">email</h4>
-                    <p class="text-sm text-yellow-400">100 Poin</p>
+                    <h1 class="font-boldf text-2xl mt-5"><?= $username; ?></h1>
+                    <h4 class="sm:text-md text-gray-400"><?= $email; ?></h4>
+                    <!-- <p class="text-sm text-yellow-400">100 Poin</p> -->
                 </div>
                 <ul class="space-y-2 font-medium text-lg">
                     <li>
@@ -54,8 +66,12 @@ if (!file_exists($envFile)) {
                         </a>
                     </li>
                 </ul>
-                <div class="cursor-pointer flex items-center p-2 text-red-500 rounded-lg hover:bg-red-600 hover:text-gray-100 group" onClick={logout}>
-                    <span class="flex-1 ml-3 whitespace-nowrap">Keluar</span>
+                <div class="cursor-pointer flex items-center p-2 text-red-500 rounded-lg hover:bg-red-600 hover:text-gray-100 group">
+                    <form action="" method="post">
+                        <button type="submit" name="logout">
+                            <span class="flex-1 ml-3 whitespace-nowrap">Keluar</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </aside>
