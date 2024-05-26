@@ -5,7 +5,7 @@
     $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
     unset($_SESSION['error']);
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['register'])) {
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -93,7 +93,7 @@
                         ) -->
                         </div>
 
-                        <button type="submit" class="px-4 py-3 bg-[#1A2035] hover:bg-gradient-to-br rounded-md text-white outline-none shadow-lg transform active:scale-x-75 transition-transform focus:ring-4 focus:ring-primary w-full">
+                        <button name="register" type="submit" class="px-4 py-3 bg-[#1A2035] hover:bg-gradient-to-br rounded-md text-white outline-none shadow-lg transform active:scale-x-75 transition-transform focus:ring-4 focus:ring-primary w-full">
                             <span class="ml-2 font-2xl">Daftar</span>
                         </button>
                         <p class="text-gray-400 my-5">

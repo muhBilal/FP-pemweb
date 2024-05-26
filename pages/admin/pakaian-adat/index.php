@@ -19,9 +19,9 @@ if (isset($_GET['id'])) {
                     <div class="pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
                         <h6 class="dark:text-white">Pakaian Adat</h6>
                     </div>
-                    <button class="py-2 px-4 bg-transparent text-[#1A2035] font-semibold border border-[#1A2035] rounded hover:bg-[#1A2035] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
+                    <a href="create.php" class="py-2 px-4 bg-transparent text-[#1A2035] font-semibold border border-[#1A2035] rounded hover:bg-[#1A2035] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
                         Tambah
-                    </button>
+                    </a>
                 </div>
                 <div class="flex-auto px-0 pt-0 pb-2">
                     <div class="p-0 overflow-x-auto">

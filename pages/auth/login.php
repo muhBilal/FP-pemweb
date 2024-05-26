@@ -1,18 +1,18 @@
 <?php
-    require_once __DIR__ . '/../../controller/AuthController.php';
-    session_start();
+     require_once __DIR__ . '/../../controller/AuthController.php';
 
-    $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
-    unset($_SESSION['error']);
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $email = $_POST['email'];
-        $password = md5($_POST['password']);
-        $data = ['email' => $email, 'password' => $password];
-
-        $authController = new AuthController();
-        $authController->login($data);
-    }
+     $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
+     unset($_SESSION['error']);
+ 
+     if (isset($_POST['login'])) {
+         $email = $_POST['email'];
+         $password = $_POST['password'];
+         $data = ['email' => $email, 'password' => $password];
+ 
+ 
+         $authController = new AuthController();
+         $authController->login($data);
+     }
 ?>
 
 <!DOCTYPE html>
@@ -80,13 +80,13 @@
                         ) -->
                         </div>
                         <div class="mb-6">
-                            <input type="password" id="password" name="password" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="*****" />
+                            <input type="password" id="password" name="password" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="***" />
                             <!-- errors.password && (
                         <p class="text-red-500">errors.password.message</p>
                         ) -->
                         </div>
 
-                        <button type="submit" class="px-4 py-3 bg-[#1A2035] hover:bg-gradient-to-br rounded-md text-white outline-none shadow-lg transform active:scale-x-75 transition-transform focus:ring-4 focus:ring-primary w-full">
+                        <button name="login" type="submit" class="px-4 py-3 bg-[#1A2035] hover:bg-gradient-to-br rounded-md text-white outline-none shadow-lg transform active:scale-x-75 transition-transform focus:ring-4 focus:ring-primary w-full">
                             <span class="ml-2 font-2xl">Masuk</span>
                         </button>
                         <p class="text-gray-400 my-5">

@@ -72,28 +72,68 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //        echo "Sorry, your file was not uploaded.";
 //    }
 }
-
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Pakaian Adat</title>
-</head>
-<body>
-<h2>Create Pakaian Adat</h2>
-<form action="/pemweb/pages/admin/pakaian-adat/create.php" method="POST" enctype="multipart/form-data"><label
-            for="name">Name:</label><br>
-    <input type="text" id="name" name="name"><br>
-    <label for="description">Description:</label><br>
-    <textarea id="description" name="description"></textarea><br>
-    <label for="maps">Maps:</label><br>
-    <input type="text" id="maps" name="maps"><br>
-    <label for="youtube">Youtube URL:</label><br>
-    <input type="text" id="youtube" name="youtube"><br>
-    <label for="image">Image:</label><br>
-    <input type="file" id="image" name="image"><br><br> <input type="submit" value="Create">
-</form>
-</body>
-</html>
+<?php include '../../../templates/admin/head.php'; ?>
+<!--<h2>Create Pakaian Adat</h2>-->
+<!--<form action="/pemweb/pages/admin/pakaian-adat/create.php" method="POST" enctype="multipart/form-data"><label-->
+<!--            for="name">Name:</label><br>-->
+<!--    <input type="text" id="name" name="name"><br>-->
+<!--    <label for="description">Description:</label><br>-->
+<!--    <textarea id="description" name="description"></textarea><br>-->
+<!--    <label for="maps">Maps:</label><br>-->
+<!--    <input type="text" id="maps" name="maps"><br>-->
+<!--    <label for="youtube">Youtube URL:</label><br>-->
+<!--    <input type="text" id="youtube" name="youtube"><br>-->
+<!--    <label for="image">Image:</label><br>-->
+<!--    <input type="file" id="image" name="image"><br><br> <input type="submit" value="Create">-->
+<!--</form>-->
+
+<div class="flex flex-wrap m-[1rem]">
+    <div class="flex-none w-full max-w-full px-3">
+        <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+            <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
+                <h6 class="text-2xl font-semibold dark:text-white mb-5">
+                    Tambah Data
+                </h6>
+
+                <form class="px-10 pb-10" action="/pemweb/pages/admin/pakaian-adat/create.php" method="POST" enctype="multipart/form-data">
+                    <div class="mb-6">
+                        <label htmlFor="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Nama
+                        </label>
+                        <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Judul" />
+                    </div>
+                    <div class="mb-6">
+                        <label htmlFor="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Deskripsi
+                        </label>
+                        <input type="text" id="description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Judul" />
+                    </div>
+                    <div class="mb-6">
+                        <label htmlFor="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Maps
+                        </label>
+                        <input type="text" id="maps" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Judul" />
+                    </div>
+                    <div class="mb-6">
+                        <label htmlFor="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Youtube URL
+                        </label>
+                        <input type="text" id="youtube" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Judul" />
+                    </div>
+                    <div class="mb-6">
+                        <label htmlFor="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Image
+                        </label>
+                        <input type="file" id="image" name="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Judul" />
+                    </div>
+                    <button class="px-4 py-3 bg-[#1A2035] hover:bg-gradient-to-br rounded-md text-white outline-none shadow-lg transform active:scale-x-75 transition-transform focus:ring-4 focus:ring-[#1A2035]" type="submit">
+                        <span class="font-2xl">Tambah Data</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<?php include '../../../templates/admin/tail.php'; ?>
+
