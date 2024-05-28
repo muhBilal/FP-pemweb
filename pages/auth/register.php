@@ -1,6 +1,8 @@
 <?php
     require_once __DIR__ . '/../../controller/AuthController.php';
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
     $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
     unset($_SESSION['error']);
