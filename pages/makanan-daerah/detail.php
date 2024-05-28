@@ -1,7 +1,7 @@
 <?php
-require '../../controller/pakaianAdatController.php';
+require '../../controller/makananDaerahController.php';
 $id = $_GET['id'];
-$pakaian = getPakaianAdatById($id);
+$makanan = getMakananDaerahById($id);
 ?>
 
 
@@ -54,7 +54,7 @@ $pakaian = getPakaianAdatById($id);
                                         href="./index.php"
                                         class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white"
                                 >
-                                    Pakaian Adat
+                                    Makanan
                                 </a>
                             </div>
                         </li>
@@ -77,8 +77,8 @@ $pakaian = getPakaianAdatById($id);
                                     />
                                 </svg>
                                 <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                                    <?= $pakaian['name'] ?>
-                                </span>
+                                <?= $makanan["name"] ?>
+                                            </span>
                             </div>
                         </li>
                     </ol>
@@ -89,8 +89,8 @@ $pakaian = getPakaianAdatById($id);
                     <div class="w-full md:w-[100%] pr-0 md:pr-5">
                         <div class="bg-white rounded-xl ">
                             <img
-                                    src="<?= $pakaian["image_url"] ?>"
-                                    alt="<?= $pakaian["name"] ?>"
+                                    src="<?= $makanan["image_url"] ?>"
+                                    alt="<?= $makanan["name"] ?>"
                                     class="w-full h-[300px] object-cover rounded-t-xl"
                             />
 
@@ -100,14 +100,14 @@ $pakaian = getPakaianAdatById($id);
                             >
                                 <div class="w-full pr-3 px-6">
                                     <div class="flex gap-5 items-center mb-3">
-                                        <span class="bg-blue-100 text-primary text-sm font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Pakaian Adat</span>
-                                        <h1 class="text-gray-400 text-sm"><?= $pakaian['created_at'] ?></h1>
+                                        <span class="bg-blue-100 text-primary text-sm font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Makanan</span>
+                                        <h1 class="text-gray-400 text-sm"><?= $makanan["created_at"] ?></h1>
                                     </div>
                                     <div class="flex w-full justify-between gap-3">
                                         <h1
                                                 class="font-bold text-xl md:text-3xl leading-6 md:leading-10 mb-5"
                                         >
-                                            <?php echo $pakaian['name']; ?>
+                                            <?php echo $makanan['name']; ?>
                                         </h1>
                                         <div class="flex gap-3 items-start">
                                             <div class="flex justify-center items-center">
@@ -127,52 +127,51 @@ $pakaian = getPakaianAdatById($id);
                                          dangerouslySetInnerHTML={{__html: animalData.desc}}/>
 
 
-                                    <?php echo $pakaian['description'] ?>
+                                    <?php echo $makanan['description'] ?>
                                 </div>
                             </div>
                         </div>
 
+                       <!-- <div class="bg-white rounded-xl my-7">
+                           <div
+                                   class="bg-white pb-10 pt-5 rounded-xl  flex flex-col md:flex-row"
+                           >
+                               <div class="pr-3 px-6">
+                                   <h1 class="text-primary font-bold text-xl md:text-3xl leading-6 md:leading-10 mb-6">
+                                       Galeri Hewan
+                                   </h1>
 
-<!--                        <div class="bg-white rounded-xl my-7">-->
-<!--                            <div-->
-<!--                                    class="bg-white pb-10 pt-5 rounded-xl  flex flex-col md:flex-row"-->
-<!--                            >-->
-<!--                                <div class="pr-3 px-6">-->
-<!--                                    <h1 class="text-primary font-bold text-xl md:text-3xl leading-6 md:leading-10 mb-6">-->
-<!--                                        Galeri Hewan-->
-<!--                                    </h1>-->
-<!---->
-<!--                                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">-->
-<!--                                        {-->
-<!--                                        animalData.galleries?.map(item => (-->
-<!--                                        <div>-->
-<!--                                            <img class="h-auto max-w-full rounded-lg"-->
-<!--                                                 src={process.env.NEXT_PUBLIC_STORAGE + item.image} alt="animal"/>-->
-<!--                                        </div>-->
-<!--                                        ))-->
-<!--                                        }-->
-<!--                                    </div>-->
-<!---->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                                   <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                       {
+                                       animalData.galleries?.map(item => (
+                                       <div>
+                                           <img class="h-auto max-w-full rounded-lg"
+                                                src={process.env.NEXT_PUBLIC_STORAGE + item.image} alt="animal"/>
+                                       </div>
+                                       ))
+                                       }
+                                   </div>
+
+                               </div>
+                           </div>
+                       </div> -->
 
 
-<!--                        <div class="bg-white rounded-xl my-7">-->
-<!--                            <div-->
-<!--                                    class="bg-white pb-10 pt-5 rounded-xl  flex flex-col md:flex-row"-->
-<!--                            >-->
-<!--                                <div class="pr-3 px-6">-->
-<!--                                    <h1 class="text-primary font-bold text-xl md:text-3xl leading-6 md:leading-10 mb-6">-->
-<!--                                        Daerah Asal-->
-<!--                                    </h1>-->
-<!---->
-<!--                                    <iframe src={animalData.map} width="750" height="450" allowfullscreen="true"-->
-<!--                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-<!---->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                       <!-- <div class="bg-white rounded-xl my-7">
+                           <div
+                                   class="bg-white pb-10 pt-5 rounded-xl  flex flex-col md:flex-row"
+                           >
+                               <div class="pr-3 px-6">
+                                   <h1 class="text-primary font-bold text-xl md:text-3xl leading-6 md:leading-10 mb-6">
+                                       Daerah Asal
+                                   </h1>
+
+                                   <iframe src={animalData.map} width="750" height="450" allowfullscreen="true"
+                                           loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                               </div>
+                           </div>
+                       </div> -->
 
 
                 </section>

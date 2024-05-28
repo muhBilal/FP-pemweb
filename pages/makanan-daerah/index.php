@@ -1,6 +1,6 @@
 <?php
-require '../../controller/pakaianAdatController.php';
-$pakaian_adat = getPakaianAdat();
+require '../../controller/makananDaerahController.php';
+$makanan_daerah = getMakananDaerah();
 ?>
 
 
@@ -10,7 +10,7 @@ $pakaian_adat = getPakaianAdat();
         <div class="bg-gray-100 h-full">
             <div class="pl-5 pt-14 sm:pl-24 pr-5 pb-10 mx-auto h-full">
                 <section class="flex justify-between items-center mb-10">
-                    <h1 class="text-start text-3xl font-medium">Pakaian Adat</h1>
+                    <h1 class="text-start text-3xl font-medium">Makanan Daerah</h1>
                     <form class="w-80">
                         <label
                             htmlFor="default-search"
@@ -40,9 +40,9 @@ $pakaian_adat = getPakaianAdat();
                                 type="search"
                                 id="default-search"
                                 class="block bg-gray-100 w-full p-4 pl-12 text-sm text-black border border-gray-400 rounded-full focus:ring-[#1A2035] focus:border-none focus:bg-white"
-                                placeholder="Cari Nama Pakaian Adat ..."
+                                placeholder="Cari Nama Makanan Daerah ..."
                                 required
-                                onchange="searchPakaianAdat(this.value)"
+                                onchange="searchMakananDaerah(this.value)"
                             />
                         </div>
                     </form>
@@ -82,7 +82,7 @@ $pakaian_adat = getPakaianAdat();
                                         />
                                     </svg>
                                     <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">
-                                         Pakaian Adat
+                                         Makanan Daerah
                                       </span>
                                 </div>
                             </li>
@@ -91,18 +91,18 @@ $pakaian_adat = getPakaianAdat();
                 </section>
                 <section class="mt-5">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-                        <?php foreach ($pakaian_adat as $pakaian) { ?>
-                            <a href="./detail.php?id=<?= $pakaian['id'] ?>"
+                        <?php foreach ($makanan_daerah as $makanan) { ?>
+                            <a href="./detail.php?id=<?= $makanan['id'] ?>"
                                class="group cursor-pointer hover:shadow-sm transition-all duration-500 relative rounded-3xl">
-                                <img src="<?= $pakaian['image_url']?>" alt="<?= $pakaian['name'] ?>"
+                                <img src="<?= $makanan['image_url']?>" alt="<?=$makanan['name'] ?>"
                                      class="w-full h-[400px] object-cover rounded-3xl"/>
                                 <div class="bg-[#1A2035] text-gray-200 p-5 absolute bottom-0 rounded-3xl w-full">
                                     <p class="text-xl font-bold my-2 hover:text-blue-600 transition-all">
-                                        <?= $pakaian['name'] ?>
+                                        <?= $makanan['name'] ?>
                                     </p>
                                     <div class="overflow-hidden transition-all duration-500 max-h-0 group-hover:max-h-[200px]">
                                         <div class="text-gray-300 mt-3 text-sm">
-                                            <?= $pakaian['description'] ?>
+                                            <?= $makanan['description'] ?>
                                         </div>
                                     </div>
                                 </div>
