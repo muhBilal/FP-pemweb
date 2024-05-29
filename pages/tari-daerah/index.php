@@ -10,7 +10,7 @@ $tari_daerah = getTariDaerah();
         <div class="bg-gray-100 h-full">
             <div class="pl-5 pt-14 sm:pl-24 pr-5 pb-10 mx-auto h-full">
                 <section class="flex justify-between items-center mb-10">
-                    <h1 class="text-start text-3xl font-medium">tari Daerah</h1>
+                    <h1 class="text-start text-3xl font-medium">Tari Daerah</h1>
                     <form class="w-80">
                         <label
                             htmlFor="default-search"
@@ -82,7 +82,7 @@ $tari_daerah = getTariDaerah();
                                         />
                                     </svg>
                                     <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">
-                                         tari Daerah
+                                         Tari Daerah
                                       </span>
                                 </div>
                             </li>

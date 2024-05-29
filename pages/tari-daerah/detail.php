@@ -14,7 +14,7 @@ $tari = getTariDaerahById($id);
                     <ol class="inline-flex items-center space-x-1 md:space-x-3">
                         <li class="inline-flex items-center">
                             <a
-                                    href="/home"
+                                    href="../home.php"
                                     class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
                             >
                                 <svg
@@ -48,7 +48,7 @@ $tari = getTariDaerahById($id);
                                     />
                                 </svg>
                                 <a
-                                        href="/animals"
+                                        href="./index.php"
                                         class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white"
                                 >
                                     Tari Daerah
@@ -73,7 +73,7 @@ $tari = getTariDaerahById($id);
                                     />
                                 </svg>
                                 <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                                                {animalData.name}
+                                                <?= $tari['name']?>
                                             </span>
                             </div>
                         </li>
