@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
                                             <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80"><?php echo $pakaian['description']; ?></p>
                                         </td>
                                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                            <a href="/pemweb/pages/admin/pakaian-adat/update.php?id=<?php echo $pakaian['id']; ?>" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Update</a>
+                                            <a href="/pemweb1/pages/admin/pakaian-adat/update.php?id=<?php echo $pakaian['id']; ?>" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Update</a>
                                             <a href="index.php?id=<?php echo $pakaian['id']; ?>" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Delete</a>
                                         </td>
                                     </tr>
