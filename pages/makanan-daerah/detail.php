@@ -132,32 +132,36 @@ $makanan = getMakananDaerahById($id);
                             </div>
                         </div>
 
-                       <!-- <div class="bg-white rounded-xl my-7">
+                       <div class="bg-white rounded-xl my-7">
                            <div
                                    class="bg-white pb-10 pt-5 rounded-xl  flex flex-col md:flex-row"
                            >
                                <div class="pr-3 px-6">
                                    <h1 class="text-primary font-bold text-xl md:text-3xl leading-6 md:leading-10 mb-6">
-                                       Galeri Hewan
+                                   Galeri <?= $makanan['name'] ?>
                                    </h1>
 
                                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                       {
+                                       <!-- {
                                        animalData.galleries?.map(item => (
                                        <div>
                                            <img class="h-auto max-w-full rounded-lg"
                                                 src={process.env.NEXT_PUBLIC_STORAGE + item.image} alt="animal"/>
                                        </div>
                                        ))
-                                       }
+                                       } -->
+                                       <div>
+                                           <img class="h-auto max-w-full rounded-lg"
+                                                src="<?= $makanan['image_url']?>" alt="<?= $makanan['name'] ?>"/>
+                                       </div>
                                    </div>
 
                                </div>
                            </div>
-                       </div> -->
+                       </div>
 
 
-                       <!-- <div class="bg-white rounded-xl my-7">
+                       <div class="bg-white rounded-xl my-7">
                            <div
                                    class="bg-white pb-10 pt-5 rounded-xl  flex flex-col md:flex-row"
                            >
@@ -166,9 +170,25 @@ $makanan = getMakananDaerahById($id);
                                        Daerah Asal
                                    </h1>
 
-                                   <iframe src={animalData.map} width="750" height="450" allowfullscreen="true"
-                                           loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                   <iframe src="<?= $makanan['maps'] ?>" width="750" height="450" allowfullscreen="true"
+                                           loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
+                               </div>
+                           </div>
+                       </div>
 
+                       <!-- <div class="bg-white rounded-xl my-7">
+                           <div
+                                   class="bg-white pb-10 pt-5 rounded-xl  flex flex-col md:flex-row"
+                           >
+                               <div class="pr-3 px-6">
+                                   <h1 class="text-primary font-bold text-xl md:text-3xl leading-6 md:leading-10 mb-6">
+                                       Video
+                                   </h1>
+
+                                   <iframe src="<?= $makanan['youtube_url'] ?>" width="750" height="450" allowfullscreen="true"
+                                           loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
                                </div>
                            </div>
                        </div> -->
