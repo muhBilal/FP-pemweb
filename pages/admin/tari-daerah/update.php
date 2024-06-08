@@ -1,4 +1,11 @@
-<?
+<?php
+require '../../../controller/tariDaerahController.php';
+
+if (!isset($_GET['id'])) {
+    exit('ID parameter is missing');
+}
+$id = $_GET['id'];
+$tari_daerah = getTariDaerahById($id);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errorMessages = [];
@@ -78,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
             <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
                 <h6 class="text-2xl font-semibold dark:text-white mb-5">
-                    Tambah Data
+                    Edit Data
                 </h6>
 
                 <form class="px-10 pb-10" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?id=<?php echo htmlspecialchars($id); ?>" method="POST" enctype="multipart/form-data">
@@ -114,11 +121,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="file" id="image" name="image" value="<?php echo htmlspecialchars($tari_daerah['image_url']); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                     </div>
                     <button class="px-4 py-3 bg-[#1A2035] hover:bg-gradient-to-br rounded-md text-white outline-none shadow-lg transform active:scale-x-75 transition-transform focus:ring-4 focus:ring-[#1A2035]" type="submit">
-                        <span class="font-2xl">Tambah Data</span>
+                        <span class="font-2xl">Update</span>
                     </button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-<?php include '../../../templates/admin/tail.php'; ?>
+<?php include '../../../templates/tail.php'; ?>

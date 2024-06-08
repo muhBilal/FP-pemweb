@@ -1,5 +1,7 @@
 <?php
+require_once __DIR__ . '/../../controller/AuthController.php';
 $envFile = __DIR__ . '/../../.env';
+
 if (!file_exists($envFile)) {
     die('.env file not found');
 } else {
@@ -15,6 +17,11 @@ if (!file_exists($envFile)) {
 }
 
 $url = $_SERVER['REQUEST_URI'];
+if(isset($_POST['logout'])){
+    $authController = new AuthController();
+    $authController->logout();
+}
+
 ?>
 <!-- sidenav  -->
 <aside class="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0"
@@ -52,8 +59,13 @@ $url = $_SERVER['REQUEST_URI'];
                 </a>
             </li>
             <li class="mt-0.5 w-full">
+<<<<<<< HEAD
                 <a class="<?php echo ($url == '/pemweb/pages/admin/tari-daerah/') ? 'py-2.7 bg-blue-500/13' : '' ?> py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
                    href="<?php echo $appUrl ?>/pages/admin/tari-daerah/">
+=======
+                <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                href="<?php echo $appUrl ?>/pages/admin/tari-daerah/">
+>>>>>>> d7f03a3fca3eb991ad680414aa98adab1da0834a
                     <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
                         <i class="relative top-0 text-sm leading-normal text-emerald-500 ni ni-credit-card"></i>
                     </div>
@@ -71,13 +83,14 @@ $url = $_SERVER['REQUEST_URI'];
                 </a>
             </li>
             <li class="mt-0.5 w-full">
-                <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                   href="./pages/virtual-reality.html">
+            <form action="" method="post">
+            <button type="submit" name="logout" class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors">
 <!--                    <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">-->
 <!--                        <i class="relative top-0 text-sm leading-normal text-cyan-500 ni ni-app"></i>-->
 <!--                    </div>-->
                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease text-red-500 font-semibold">Logout</span>
-                </a>
+                </button>
+            </form>
             </li>
         </ul>
     </div>
