@@ -118,5 +118,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </div>
-<?php include '../../../templates/admin/tail.php'; ?>
+<?php include '../../../templates/tail.php'; ?>
+
 

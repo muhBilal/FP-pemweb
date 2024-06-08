@@ -7,8 +7,8 @@ if (isset($_GET['id'])) {
     deletePakaianAdat($id);
     header('Location: index.php');
 }
-
 ?>
+
 <?php include '../../../templates/admin/head.php'; ?>
 <!-- cards -->
 <div class="w-full px-6 py-6 mx-auto">
@@ -23,8 +23,8 @@ if (isset($_GET['id'])) {
                         Tambah
                     </a>
                 </div>
-                <div class="flex-auto px-0 pt-0 pb-2">
-                    <div class="p-0 overflow-x-auto">
+                <div class="flex-auto px-0 pt-0 pb-2 overflow-x-auto">
+                    <div class="p-0">
                         <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
                             <thead class="align-bottom">
                                 <tr>
@@ -44,11 +44,11 @@ if (isset($_GET['id'])) {
                                             </div>
                                         </td>
                                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80"><?php echo $pakaian['description']; ?></p>
+                                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80"><?php echo substr($pakaian['description'], 0, 200); ?>...</p>
                                         </td>
                                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                            <a href="/pemweb1/pages/admin/pakaian-adat/update.php?id=<?php echo $pakaian['id']; ?>" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Update</a>
-                                            <a href="index.php?id=<?php echo $pakaian['id']; ?>" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Delete</a>
+                                            <a href="/fp-pemweb/pages/admin/pakaian-adat/update.php?id=<?php echo $pakaian['id']; ?>" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Update</a>
+                                            <a href="index.php?id=<?php echo $pakaian['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Delete</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -61,4 +61,4 @@ if (isset($_GET['id'])) {
     </div>
 </div>
 <!-- end cards -->
-<?php include '../../../templates/admin/tail.php'; ?>
+<?php include '../../../templates/tail.php'; ?>
