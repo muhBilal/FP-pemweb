@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
                                             <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80"><?php echo substr($makanan['description'], 0, 200); ?>...</p>
                                         </td>
                                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                            <a href="/fp-pemweb/pages/admin/makanan-daerah/update.php?id=<?php echo $makanan['id']; ?>" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Update</a>
+                                            <a href="/pemweb/pages/admin/makanan-daerah/update.php?id=<?php echo $makanan['id']; ?>" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Update</a>
                                             <a href="index.php?id=<?php echo $makanan['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Delete</a>
                                         </td>
                                     </tr>
