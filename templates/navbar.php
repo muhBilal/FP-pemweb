@@ -61,7 +61,7 @@ if(isset($_POST['logout'])){
 <!--                        </a>-->
 <!--                    </li>-->
                     <li>
-                        <a href="/about-us" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
+                        <a href="/pemweb/pages/profile/updateProfile.php" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
                             <span class="ml-3">Pengaturan Akun</span>
                         </a>
                     </li>
