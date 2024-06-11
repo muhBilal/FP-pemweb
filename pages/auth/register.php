@@ -109,7 +109,7 @@
             </div>
         </div>
         <div class="w-[60%] relative hidden md:block">
-            <img src="../../public/images/culture2.webp" alt="" class="h-full w-full object-cover rounded-2xl" />
+            <img src="../../public/images/bg-indonesia.jpg" alt="" class="h-full w-full object-cover rounded-2xl" />
             <div class="w-full h-full rounded-2xl bg-gradient-to-t from-gray-900 opacity-10 absolute bottom-0"></div>
             <div class="w-full h-full rounded-2xl bg-gradient-to-t from-gray-900 opacity-50 absolute bottom-0"></div>
             <div class="absolute top-0 right-0 bg-white rounded-full m-5 text-md px-4 font-semibold py-1 flex gap-2 items-center cursor-pointer">
@@ -128,7 +128,7 @@
                     </div>
                     <div class="max-w-xs border border-white px-2 py-1 flex items-center gap-3 rounded-lg">
                         <GiEarthAmerica />
-                        <span>34 Provinsi dan 100+ kebudayaan</span>
+                        <span>38 Provinsi dan 100+ kebudayaan</span>
                     </div>
                 </div>
             </div>
