@@ -66,7 +66,6 @@ if (!file_exists($envFile)) {
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
                         <?php foreach ($pakaian_adat as $pakaian) { ?>
                             <a href="./detail.php?id=<?= $pakaian['id'] ?>" class="group cursor-pointer hover:shadow-sm transition-all duration-500 relative rounded-3xl">
-                                <!-- <img src="<?= $appUrl ?>/public/images/upload/pakaian-adat/665e924c81d80_1717473868.jpg" alt="<?= htmlspecialchars($pakaian['name'], ENT_QUOTES, 'UTF-8'); ?>" class="w-full h-[400px] object-cover rounded-3xl" /> -->
                                 <img src="<?= $appUrl.$pakaian['image_url'] ?>" alt="<?= htmlspecialchars($pakaian['name'], ENT_QUOTES, 'UTF-8'); ?>" class="w-full h-[400px] object-cover rounded-3xl" />
                                 <div class="bg-[#1A2035] text-gray-200 p-5 absolute bottom-0 rounded-3xl w-full">
                                     <p class="text-xl font-bold my-2 hover:text-blue-600 transition-all">
