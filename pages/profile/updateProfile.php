@@ -9,6 +9,7 @@ if (session_status() == PHP_SESSION_NONE) {
 //     exit('ID parameter is missing');
 // }
 $id = $_SESSION['id'];
+echo $id;
 $user = getUserById($id);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
