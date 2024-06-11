@@ -1,5 +1,14 @@
 <?php
 require '../../controller/makananDaerahController.php';
+$envFile = __DIR__ . '/../../.env';
+$env = file_get_contents($envFile);
+$env = explode("\n", $env);
+$env = array_filter($env);
+$env = array_map(function ($item) {
+    return explode('=', $item);
+}, $env);
+$env = array_column($env, 1, 0);
+$appUrl = $env['APP_URL'];
 $id = $_GET['id'];
 $makanan = getMakananDaerahById($id);
 ?>
@@ -54,7 +63,7 @@ $makanan = getMakananDaerahById($id);
                                         href="./index.php"
                                         class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white"
                                 >
-                                    Makanan
+                                    Makanan Daerah
                                 </a>
                             </div>
                         </li>
@@ -77,8 +86,8 @@ $makanan = getMakananDaerahById($id);
                                     />
                                 </svg>
                                 <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                                <?= $makanan["name"] ?>
-                                            </span>
+                                    <?= $makanan['name'] ?>
+                                </span>
                             </div>
                         </li>
                     </ol>
@@ -89,7 +98,7 @@ $makanan = getMakananDaerahById($id);
                     <div class="w-full md:w-[100%] pr-0 md:pr-5">
                         <div class="bg-white rounded-xl ">
                             <img
-                                    src="<?= $makanan["image_url"] ?>"
+                                    src="<?= $appUrl.$makanan["image_url"] ?>"
                                     alt="<?= $makanan["name"] ?>"
                                     class="w-full h-[300px] object-cover rounded-t-xl"
                             />
@@ -100,8 +109,8 @@ $makanan = getMakananDaerahById($id);
                             >
                                 <div class="w-full pr-3 px-6">
                                     <div class="flex gap-5 items-center mb-3">
-                                        <span class="bg-blue-100 text-primary text-sm font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Makanan</span>
-                                        <h1 class="text-gray-400 text-sm"><?= $makanan["created_at"] ?></h1>
+                                        <span class="bg-blue-100 text-primary text-sm font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Makanan Daerah</span>
+                                        <h1 class="text-gray-400 text-sm"><?= $makanan['created_at'] ?></h1>
                                     </div>
                                     <div class="flex w-full justify-between gap-3">
                                         <h1
@@ -132,7 +141,7 @@ $makanan = getMakananDaerahById($id);
                             </div>
                         </div>
 
-                       <div class="bg-white rounded-xl my-7">
+                        <div class="bg-white rounded-xl my-7">
                            <div
                                    class="bg-white pb-10 pt-5 rounded-xl  flex flex-col md:flex-row"
                            >
@@ -152,7 +161,7 @@ $makanan = getMakananDaerahById($id);
                                        } -->
                                        <div>
                                            <img class="h-auto max-w-full rounded-lg"
-                                                src="<?= $makanan['image_url']?>" alt="<?= $makanan['name'] ?>"/>
+                                                src="<?= $appUrl.$makanan['image_url']?>" alt="<?= $makanan['name'] ?>"/>
                                        </div>
                                    </div>
 
@@ -176,23 +185,6 @@ $makanan = getMakananDaerahById($id);
                                </div>
                            </div>
                        </div>
-
-                       <!-- <div class="bg-white rounded-xl my-7">
-                           <div
-                                   class="bg-white pb-10 pt-5 rounded-xl  flex flex-col md:flex-row"
-                           >
-                               <div class="pr-3 px-6">
-                                   <h1 class="text-primary font-bold text-xl md:text-3xl leading-6 md:leading-10 mb-6">
-                                       Video
-                                   </h1>
-
-                                   <iframe src="<?= $makanan['youtube_url'] ?>" width="750" height="450" allowfullscreen="true"
-                                           loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                                    </iframe>
-                               </div>
-                           </div>
-                       </div> -->
-
 
                 </section>
             </div>

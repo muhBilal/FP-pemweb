@@ -1,4 +1,7 @@
 <?php
+
+use Composer\InstalledVersions;
+
 require '../../../controller/makananDaerahController.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -33,7 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $targetFile = $targetDir . $newFileName;
 
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-            $imageUrl = $targetFile;
+            // $imageUrl = $targetFile;
+            $imageUrl = "/public/images/upload/makanan-daerah/" . $newFileName;
             echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded. URL: " . $imageUrl;
 
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
