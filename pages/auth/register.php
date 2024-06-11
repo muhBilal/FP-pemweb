@@ -100,7 +100,7 @@
                         </button>
                         <p class="text-gray-400 my-5">
                             Sudah mempunyai akun?
-                            <a href='/pages/auth/login.php' class="text-gray-600 font-bold cursor-pointer hover:text-blue-500">
+                            <a href='login.php' class="text-gray-600 font-bold cursor-pointer hover:text-blue-500">
                             Login sekarang
                             </a>
                         </p>

@@ -91,7 +91,7 @@
                         </button>
                         <p class="text-gray-400 my-5">
                             Belum mempunyai akun?
-                            <a href='/pages/auth/register.php' class="text-gray-600 font-bold cursor-pointer hover:text-blue-500">
+                            <a href='register.php' class="text-gray-600 font-bold cursor-pointer hover:text-blue-500">
                             Daftar sekarang
                             </a>
                         </p>
