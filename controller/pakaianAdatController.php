@@ -1,9 +1,22 @@
 <?php
 require_once __DIR__ . '/../config/connection.php';
+
 function getPakaianAdat() {
     global $conn;
     $query = "SELECT * FROM pakaian_adat";
-    $result = mysqli_query($conn, $query);
+
+    if (isset($_POST['btnSearch'])) {
+        $searchTerm = $_POST['search'];
+        $query = "SELECT * FROM pakaian_adat WHERE name LIKE ?";
+        $stmt = mysqli_prepare($conn, $query);
+        $searchTerm = $searchTerm . '%';
+        mysqli_stmt_bind_param($stmt, 's', $searchTerm);
+    } else {
+        $stmt = mysqli_prepare($conn, $query);
+    }
+
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     if (!$result) {
         die("Query error: " . mysqli_error($conn));
     }

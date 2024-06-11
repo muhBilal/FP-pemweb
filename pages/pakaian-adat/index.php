@@ -11,14 +11,14 @@ $pakaian_adat = getPakaianAdat();
             <div class="pl-5 pt-14 sm:pl-24 pr-5 pb-10 mx-auto h-full">
                 <section class="flex justify-between items-center mb-10">
                     <h1 class="text-start text-3xl font-medium">Pakaian Adat</h1>
-                    <form class="w-80">
+                    <form class="w-80" method="POST">
                         <label
                             htmlFor="default-search"
                             class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
                         >
                             Search
                         </label>
-                        <div class="relative">
+                        <div class="relative flex">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none">
                                 <svg
                                     class="w-4 h-4 text-gray-500 dark:text-gray-400"
@@ -37,6 +37,7 @@ $pakaian_adat = getPakaianAdat();
                                 </svg>
                             </div>
                             <input
+                            name="search"
                                 type="search"
                                 id="default-search"
                                 class="block bg-gray-100 w-full p-4 pl-12 text-sm text-black border border-gray-400 rounded-full focus:ring-[#1A2035] focus:border-none focus:bg-white"
@@ -44,6 +45,7 @@ $pakaian_adat = getPakaianAdat();
                                 required
                                 onchange="searchPakaianAdat(this.value)"
                             />
+                      <button class="ml-2 px-4 py-3 bg-blue-500 text-white rounded-full" type="submit" name="btnSearch">Cari</button>
                         </div>
                     </form>
                     <nav class="flex" aria-label="Breadcrumb">
