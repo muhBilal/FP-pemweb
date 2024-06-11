@@ -42,24 +42,18 @@ if(isset($_POST['logout'])){
                     <img src="<?php echo $imagePath ?>" class="w-[80px] h-[80px] object-cover rounded-xl" alt="" />
                     <h1 class="font-boldf text-2xl mt-5"><?= $username; ?></h1>
                     <h4 class="sm:text-md text-gray-400"><?= $email; ?></h4>
-                    <!-- <p class="text-sm text-yellow-400">100 Poin</p> -->
                 </div>
                 <ul class="space-y-2 font-medium text-lg">
                     <li>
-                        <a href="/pemweb/pages/index.php" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
+                        <a href="/pemweb/pages/home.php" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
                             <span class="ml-3">Beranda</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/about-us" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
+                        <a href="/pemweb/pages/home.php" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
                             <span class="ml-3">Tentang Kami</span>
                         </a>
                     </li>
-<!--                    <li>-->
-<!--                        <a href="/about-us" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">-->
-<!--                            <span class="ml-3">Tari Daerah</span>-->
-<!--                        </a>-->
-<!--                    </li>-->
                     <li>
                         <a href="/pemweb/pages/profile/updateProfile.php" class="flex items-center p-2 text-gray-100 rounded-lg hover:bg-gray-100 hover:text-gray-700 group">
                             <span class="ml-3">Pengaturan Akun</span>
