@@ -33,7 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $targetFile = $targetDir . $newFileName;
 
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-            $imageUrl = $targetFile;
+            // $imageUrl = $targetFile;
+            $imageUrl = "/public/images/upload/tari-daerah/" . $newFileName;
             echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded. URL: " . $imageUrl;
 
             $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
@@ -118,5 +119,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </div>
-<?php include '../../../templates/admin/tail.php'; ?>
+<?php include '../../../templates/tail.php'; ?>
+
 

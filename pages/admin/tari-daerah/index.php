@@ -1,14 +1,14 @@
 <?php
 require '../../../controller/tariDaerahController.php';
-$tariDaerah = getTariDaerah();
+$tari_daerah = getTariDaerah();
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     deleteTariDaerah($id);
     header('Location: index.php');
 }
-
 ?>
+
 <?php include '../../../templates/admin/head.php'; ?>
 <!-- cards -->
 <div class="w-full px-6 py-6 mx-auto">
@@ -23,8 +23,8 @@ if (isset($_GET['id'])) {
                         Tambah
                     </a>
                 </div>
-                <div class="flex-auto px-0 pt-0 pb-2">
-                    <div class="p-0 overflow-x-auto">
+                <div class="flex-auto px-0 pt-0 pb-2 overflow-x-auto">
+                    <div class="p-0">
                         <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
                             <thead class="align-bottom">
                                 <tr>
@@ -34,7 +34,7 @@ if (isset($_GET['id'])) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($tariDaerah as $tari) { ?>
+                                <?php foreach ($tari_daerah as $tari) { ?>
                                     <tr>
                                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                                             <div class="flex px-2 py-1">
@@ -44,7 +44,15 @@ if (isset($_GET['id'])) {
                                             </div>
                                         </td>
                                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80"><?php echo $tari['description']; ?></p>
+                                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">
+                                                <?php
+                                                if (isset($tari['description']) && $tari['description'] !== null) {
+                                                    echo substr($tari['description'], 0, 200);
+                                                } else {
+                                                    echo "Description not available";
+                                                }
+                                                ?>...
+                                            </p>
                                         </td>
                                         <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                                             <a href="/pemweb/pages/admin/tari-daerah/update.php?id=<?php echo $tari['id']; ?>" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Update</a>
@@ -61,4 +69,4 @@ if (isset($_GET['id'])) {
     </div>
 </div>
 <!-- end cards -->
-<?php include '../../../templates/admin/tail.php'; ?>
+<?php include '../../../templates/tail.php'; ?>

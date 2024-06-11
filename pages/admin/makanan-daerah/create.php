@@ -1,7 +1,5 @@
 <?php
 
-use Composer\InstalledVersions;
-
 require '../../../controller/makananDaerahController.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

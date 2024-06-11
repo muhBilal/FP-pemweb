@@ -1,8 +1,18 @@
 <?php
 require '../../controller/tariDaerahController.php';
+$envFile = __DIR__ . '/../../.env';
+$env = file_get_contents($envFile);
+$env = explode("\n", $env);
+$env = array_filter($env);
+$env = array_map(function ($item) {
+    return explode('=', $item);
+}, $env);
+$env = array_column($env, 1, 0);
+$appUrl = $env['APP_URL'];
 $id = $_GET['id'];
 $tari = getTariDaerahById($id);
 ?>
+
 
 <?php include '../../templates/head.php'; ?>
 <section class="bg-[#1A2035] h-screen p-5 sm:ml-72" xmlns="http://www.w3.org/1999/html">
@@ -20,6 +30,7 @@ $tari = getTariDaerahById($id);
                                 <svg
                                         class="w-3 h-3 mr-2.5"
 
+
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
@@ -34,6 +45,7 @@ $tari = getTariDaerahById($id);
                             <div class="flex items-center">
                                 <svg
                                         class="w-3 h-3 text-gray-400 mx-1"
+
 
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -60,6 +72,7 @@ $tari = getTariDaerahById($id);
                                 <svg
                                         class="w-3 h-3 text-gray-400 mx-1"
 
+
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 6 10"
@@ -73,21 +86,23 @@ $tari = getTariDaerahById($id);
                                     />
                                 </svg>
                                 <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                                                <?= $tari['name']?>
-                                            </span>
+                                    <?= $tari['name'] ?>
+                                </span>
                             </div>
                         </li>
                     </ol>
                 </nav>
 
+
                 <section class="flex flex-col md:flex-row gap-5 mt-2">
                     <div class="w-full md:w-[100%] pr-0 md:pr-5">
                         <div class="bg-white rounded-xl ">
                             <img
-                                    src="<?= $tari["image_url"] ?>"
+                                    src="<?= $appUrl.$tari["image_url"] ?>"
                                     alt="<?= $tari["name"] ?>"
                                     class="w-full h-[300px] object-cover rounded-t-xl"
                             />
+
 
                             <div
                                     class="bg-white pb-10 pt-5 rounded-b-xl  flex flex-col md:flex-row"
@@ -120,6 +135,7 @@ $tari = getTariDaerahById($id);
                                     <div class="text-gray-500 text-lg"
                                          dangerouslySetInnerHTML={{__html: animalData.desc}}/>
 
+
                                     <?php echo $tari['description'] ?>
                                 </div>
                             </div>
@@ -145,7 +161,7 @@ $tari = getTariDaerahById($id);
                                        } -->
                                        <div>
                                            <img class="h-auto max-w-full rounded-lg"
-                                                src="<?= $tari['image_url']?>" alt="<?= $tari['name'] ?>"/>
+                                                src="<?= $appUrl.$tari['image_url']?>" alt="<?= $tari['name'] ?>"/>
                                        </div>
                                    </div>
 
@@ -169,11 +185,10 @@ $tari = getTariDaerahById($id);
                                </div>
                            </div>
                        </div>
+
                 </section>
             </div>
         </div>
     </div>
 </section>
 <?php include '../../templates/tail.php'; ?>
-
-    
