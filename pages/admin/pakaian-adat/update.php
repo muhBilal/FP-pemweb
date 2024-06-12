@@ -39,7 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $targetFile = $targetDir . $newFileName;
 
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-            $imageUrl = $targetFile;
+            // $imageUrl = $targetFile;
+            $imageUrl = "/public/images/upload/pakaian-adat/" . $newFileName;
         } else {
             $errorMessages[] = "Sorry, there was an error uploading your file.";
             $uploadOk = 0;

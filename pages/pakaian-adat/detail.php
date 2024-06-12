@@ -1,5 +1,14 @@
 <?php
 require '../../controller/pakaianAdatController.php';
+$envFile = __DIR__ . '/../../.env';
+$env = file_get_contents($envFile);
+$env = explode("\n", $env);
+$env = array_filter($env);
+$env = array_map(function ($item) {
+    return explode('=', $item);
+}, $env);
+$env = array_column($env, 1, 0);
+$appUrl = $env['APP_URL'];
 $id = $_GET['id'];
 $pakaian = getPakaianAdatById($id);
 ?>
@@ -89,7 +98,7 @@ $pakaian = getPakaianAdatById($id);
                     <div class="w-full md:w-[100%] pr-0 md:pr-5">
                         <div class="bg-white rounded-xl ">
                             <img
-                                    src="<?= $pakaian["image_url"] ?>"
+                                    src="<?= $appUrl.$pakaian["image_url"] ?>"
                                     alt="<?= $pakaian["name"] ?>"
                                     class="w-full h-[300px] object-cover rounded-t-xl"
                             />
@@ -152,7 +161,7 @@ $pakaian = getPakaianAdatById($id);
                                        } -->
                                        <div>
                                            <img class="h-auto max-w-full rounded-lg"
-                                                src="<?= $pakaian['image_url']?>" alt="<?= $pakaian['name'] ?>"/>
+                                                src="<?= $appUrl.$pakaian['image_url']?>" alt="<?= $pakaian['name'] ?>"/>
                                        </div>
                                    </div>
 
