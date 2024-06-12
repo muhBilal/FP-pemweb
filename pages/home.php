@@ -26,68 +26,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-                            <!-- <div class="group">
-                                <div class="mt-10 z-30 bg-white h-[270px] relative p-5 rounded-xl shadow-sm w-full group-hover:h-[310px] group-hover:shadow-lg duration-500 ease-in-out">
-                                    <img src="../public/images/food.webp" alt="animal"
-                                         class="h-[70%] w-[90%] object-cover rounded-xl absolute top-5 left-1/2 -translate-x-1/2 group group-hover:-translate-y-1/2 group-hover:w-[250px] group-hover:h-[140px] duration-500 ease-in-out transform-gpu"/>
-                                    <div class="group text-center w-full px-5 absolute bottom-5 left-1/2 -translate-x-1/2 group-hover:bottom-10 duration-500 ease-in-out transform-gpu">
-                                        <h1 class="group text-center mt-2 mb-2 font-semibold text-lg text-primary  duration-1000 ease-in-out">
-                                            Makanan
-                                        </h1>
-                                        <p class="group hidden text-sm mb-3 group-hover:block  duration-1000 ease-in-out opacity-0 group-hover:opacity-100">
-                                            Jelajahi beragam hewan dari seluruh provinsi. Dari mamalia
-                                            eksotis hingga reptil yang misterius, yang telah kami
-                                            kumpulkan untuk kaamu nikmati
-                                        </p>
-                                        <a href="makanan-daerah/index.php"
-                                           class="group mx-auto hidden px-5 py-2 bg-[#1A2035] hover:bg-gradient-to-br rounded-md text-white outline-none shadow-lg transform active:scale-x-75 transition-transform text-sm group-hover:block duration-1000 ease-in-out opacity-0 group-hover:opacity-100">
-                                            Selengkapnya
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="group">
-                                <div class="mt-10 z-30 bg-white h-[270px] relative p-5 rounded-xl shadow-sm w-full group-hover:h-[310px] group-hover:shadow-lg duration-500 ease-in-out">
-                                    <img src="../public/images/tari.webp" alt="animal"
-                                         class="h-[70%] w-[90%] object-cover rounded-xl absolute top-5 left-1/2 -translate-x-1/2 group group-hover:-translate-y-1/2 group-hover:w-[250px] group-hover:h-[140px] duration-500 ease-in-out transform-gpu"/>
-                                    <div class="group text-center w-full px-5 absolute bottom-5 left-1/2 -translate-x-1/2 group-hover:bottom-10 duration-500 ease-in-out transform-gpu">
-                                        <h1 class="group text-center mt-2 mb-2 font-semibold text-lg text-primary  duration-1000 ease-in-out">
-                                            Tari Adat
-                                        </h1>
-                                        <p class="group hidden text-sm mb-3 group-hover:block  duration-1000 ease-in-out opacity-0 group-hover:opacity-100">
-                                            Jelajahi beragam hewan dari seluruh provinsi. Dari mamalia
-                                            eksotis hingga reptil yang misterius, yang telah kami
-                                            kumpulkan untuk kaamu nikmati
-                                        </p>
-                                        <a href="tari-adat/index.php"
-                                           class="group mx-auto hidden px-5 py-2 bg-[#1A2035] hover:bg-gradient-to-br rounded-md text-white outline-none shadow-lg transform active:scale-x-75 transition-transform text-sm group-hover:block duration-1000 ease-in-out opacity-0 group-hover:opacity-100">
-                                            Selengkapnya
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="group">
-                                <div class="mt-10 z-30 bg-white h-[270px] relative p-5 rounded-xl shadow-sm w-full group-hover:h-[310px] group-hover:shadow-lg duration-500 ease-in-out">
-                                    <img src="/images/animal.webp" alt="animal"
-                                         class="h-[70%] w-[90%] object-cover rounded-xl absolute top-5 left-1/2 -translate-x-1/2 group group-hover:-translate-y-1/2 group-hover:w-[250px] group-hover:h-[140px] duration-500 ease-in-out transform-gpu"/>
-                                    <div class="group text-center w-full px-5 absolute bottom-5 left-1/2 -translate-x-1/2 group-hover:bottom-10 duration-500 ease-in-out transform-gpu">
-                                        <h1 class="group text-center mt-2 mb-2 font-semibold text-lg text-primary  duration-1000 ease-in-out">
-                                            Hewan
-                                        </h1>
-                                        <p class="group hidden text-sm mb-3 group-hover:block  duration-1000 ease-in-out opacity-0 group-hover:opacity-100">
-                                            Jelajahi beragam hewan dari seluruh provinsi. Dari mamalia
-                                            eksotis hingga reptil yang misterius, yang telah kami
-                                            kumpulkan untuk kaamu nikmati
-                                        </p>
-                                        <Link href="/animals"
-                                              class="group mx-auto hidden btn-primary-lite text-sm group-hover:block  duration-1000 ease-in-out opacity-0 group-hover:opacity-100">
-                                        Selengkapnya
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                         <div class="w-full md:w-1/3 flex flex-col gap-2 mb-10">
                             <div class="group">

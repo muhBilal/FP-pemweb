@@ -1,6 +1,5 @@
 <?php
-require_once __DIR__ . '/config/connection.php';
-
+require_once __DIR__ . '../../config/connection.php';
 function seedUsers($conn) {
     $users = [
         ['username' => 'John Doe', 'email' => 'john@example.com', 'password' => md5('password'), 'role' => 'admin'],
